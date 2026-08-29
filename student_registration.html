@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Registration Form</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #e8dff5, #d9e8ff);
+            min-height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .form-box {
+            max-width: 700px;
+            margin: auto;
+            padding: 35px 45px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.20);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: inline-block;
+            width: 150px;
+            font-weight: bold;
+            color: #333;
+            vertical-align: top;
+            padding-top: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        select,
+        textarea {
+            width: calc(100% - 155px);
+            padding: 11px 13px;
+            border: 1px solid #bbb;
+            border-radius: 7px;
+            font-size: 14px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        input[type="date"]:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #7b2cbf;
+            box-shadow: 0 0 8px rgba(123, 44, 191, 0.30);
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #999;
+        }
+
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .gender-options {
+            display: inline-block;
+            width: calc(100% - 155px);
+            padding-top: 10px;
+        }
+
+        .gender-options input {
+            margin-left: 5px;
+        }
+
+        input[type="file"] {
+            width: calc(100% - 155px);
+            padding: 8px;
+            border: 1px solid #bbb;
+            border-radius: 7px;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            padding: 12px 30px;
+            margin: 0 8px;
+            border: none;
+            border-radius: 7px;
+            font-size: 15px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        input[type="submit"] {
+            background-color: #7b2cbf;
+        }
+
+        input[type="reset"] {
+            background-color: #555;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #5a189a;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
+        }
+
+        input[type="reset"]:hover {
+            background-color: #222;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
+        }
+
+        @media (max-width: 700px) {
+
+            body {
+                padding: 20px;
+            }
+
+            .form-box {
+                padding: 25px;
+            }
+
+            label {
+                display: block;
+                width: 100%;
+                margin-bottom: 7px;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="tel"],
+            input[type="date"],
+            select,
+            textarea,
+            input[type="file"],
+            .gender-options {
+                width: 100%;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Student Registration Form</h1>
+
+    <div class="form-box">
+
+        <form>
+
+            <div class="form-group">
+                <label>Reg ID:</label>
+                <input type="text"
+                       name="regid"
+                       placeholder="Enter your Reg ID"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label>Name:</label>
+                <input type="text"
+                       name="name"
+                       minlength="15"
+                       placeholder="Enter your full name"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label>Gender:</label>
+
+                <div class="gender-options">
+                    <input type="radio" name="gender" value="Male">
+                    Male
+
+                    <input type="radio" name="gender" value="Female">
+                    Female
+
+                    <input type="radio" name="gender" value="Other">
+                    Other
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>DOB:</label>
+                <input type="date"
+                       name="dob"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="email"
+                       name="email"
+                       placeholder="Enter your email address"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label>Phone:</label>
+                <input type="tel"
+                       name="phone"
+                       pattern="[0-9]{10}"
+                       placeholder="Enter 10-digit phone number"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label>Department:</label>
+
+                <select name="department" required>
+                    <option value="">Select your department</option>
+                    <option>Computer Science</option>
+                    <option>Artificial Intelligence</option>
+                    <option>Data Science</option>
+                    <option>Information Technology</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Course:</label>
+
+                <select name="course" required>
+                    <option value="">Select your course</option>
+                    <option>BCA</option>
+                    <option>BSc</option>
+                    <option>MCA</option>
+                    <option>MSc</option>
+                    <option>MBA</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Section:</label>
+                <input type="text"
+                       name="section"
+                       placeholder="Enter your section"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label>College:</label>
+                <input type="text"
+                       name="college"
+                       placeholder="Enter your college name"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label>Address:</label>
+
+                <textarea name="address"
+                          placeholder="Enter your complete address"
+                          required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Resume:</label>
+                <input type="file" name="resume">
+            </div>
+
+            <div class="buttons">
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>
