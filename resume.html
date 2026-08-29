@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shrihae | Resume</title>
+
+
+    <style>
+
+        /* ==============================
+           GENERAL STYLING
+        ============================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #eef1f5;
+            color: #222;
+            line-height: 1.6;
+        }
+
+
+        /* ==============================
+           MAIN RESUME BOX
+        ============================== */
+
+        .resume {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+            background-color: white;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+
+        /* ==============================
+           HEADER
+        ============================== */
+
+        .header {
+            background: linear-gradient(135deg, #4b0082, #7b2cbf);
+            color: white;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 42px;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .header h3 {
+            font-size: 20px;
+            font-weight: normal;
+            margin-bottom: 15px;
+        }
+
+        .header p {
+            margin: 6px 0;
+        }
+
+        .header a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .header a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* ==============================
+           NAVIGATION BAR
+        ============================== */
+
+        nav {
+            background-color: white;
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #4b0082;
+            font-weight: bold;
+            margin: 0 10px;
+            padding: 9px 13px;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #4b0082;
+            color: white;
+        }
+
+
+        /* ==============================
+           CONTENT
+        ============================== */
+
+        .content {
+            padding: 45px 55px;
+        }
+
+        .section {
+            margin-bottom: 45px;
+            scroll-margin-top: 80px;
+        }
+
+        .section-title {
+            color: #4b0082;
+            font-size: 24px;
+            margin-bottom: 18px;
+            border-left: 5px solid #7b2cbf;
+            padding-left: 12px;
+        }
+
+        .section p {
+            text-align: justify;
+        }
+
+
+        /* ==============================
+           EDUCATION TABLE
+        ============================== */
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th {
+            background-color: #4b0082;
+            color: white;
+            padding: 13px;
+        }
+
+        td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f7f4fa;
+        }
+
+        tr:hover {
+            background-color: #eee5f7;
+        }
+
+
+        /* ==============================
+           SKILLS
+        ============================== */
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .skill {
+            background-color: #f1e8fa;
+            color: #4b0082;
+            padding: 10px 18px;
+            border-radius: 20px;
+            font-weight: bold;
+            border: 1px solid #d8c0ed;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            background-color: #4b0082;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+
+        /* ==============================
+           PROJECT CARDS
+        ============================== */
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .project {
+            border: 1px solid #ddd;
+            padding: 22px;
+            border-radius: 10px;
+            background-color: #fafafa;
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .project h3 {
+            color: #4b0082;
+            margin-bottom: 10px;
+        }
+
+
+        /* ==============================
+           CERTIFICATES
+        ============================== */
+
+        .certificates {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .certificate {
+            padding: 15px;
+            background-color: #f7f3fb;
+            border-left: 4px solid #7b2cbf;
+            transition: 0.3s;
+        }
+
+        .certificate:hover {
+            transform: translateX(5px);
+        }
+
+
+        /* ==============================
+           EXPERIENCE
+        ============================== */
+
+        .experience {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #fafafa;
+        }
+
+        .experience h3 {
+            color: #4b0082;
+            margin-bottom: 8px;
+        }
+
+
+        /* ==============================
+           STRENGTHS
+        ============================== */
+
+        .strengths {
+            padding-left: 25px;
+        }
+
+        .strengths li {
+            margin-bottom: 8px;
+        }
+
+
+        /* ==============================
+           CONTACT
+        ============================== */
+
+        .contact-box {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .contact-item {
+            flex: 1;
+            min-width: 200px;
+            padding: 20px;
+            background-color: #f7f3fb;
+            border-radius: 10px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .contact-item h3 {
+            color: #4b0082;
+            margin-bottom: 8px;
+        }
+
+        .contact-item p {
+            text-align: center;
+            margin: 0;
+        }
+
+        .contact-item a {
+            color: blue;
+            text-decoration: underline;
+        }
+
+
+        /* ==============================
+           FOOTER
+        ============================== */
+
+        footer {
+            text-align: center;
+            background-color: #2d0a3d;
+            color: white;
+            padding: 22px;
+        }
+
+        footer p {
+            text-align: center;
+        }
+
+
+        /* ==============================
+           RESPONSIVE DESIGN
+        ============================== */
+
+        @media (max-width: 700px) {
+
+            .resume {
+                width: 95%;
+                margin: 15px auto;
+            }
+
+            .header {
+                padding: 35px 20px;
+            }
+
+            .header h1 {
+                font-size: 32px;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 4px;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .certificates {
+                grid-template-columns: 1fr;
+            }
+
+            table {
+                font-size: 12px;
+            }
+
+            th,
+            td {
+                padding: 8px 5px;
+            }
+
+            .contact-box {
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================
+         MAIN RESUME
+    =================================== -->
+
+    <div class="resume">
+
+
+        <!-- HEADER -->
+
+        <header class="header" id="home">
+
+            <h1>Shrihae</h1>
+
+            <h3>MCA - Generative Artificial Intelligence</h3>
+
+            <p>
+                Aspiring AI & Generative AI Professional
+            </p>
+
+            <p>
+                <a href="mailto:shrihae78@gmail.com">
+                    shrihae78@gmail.com
+                </a>
+                |
+                9876543210
+            </p>
+
+        </header>
+
+
+        <!-- NAVIGATION -->
+
+        <nav>
+
+            <a href="#home">Home</a>
+
+            <a href="#about">About</a>
+
+            <a href="#education">Education</a>
+
+            <a href="#skills">Skills</a>
+
+            <a href="#projects">Projects</a>
+
+            <a href="#contact">Contact</a>
+
+        </nav>
+
+
+        <!-- CONTENT -->
+
+        <main class="content">
+
+
+            <!-- ABOUT -->
+
+            <section class="section" id="about">
+
+                <h2 class="section-title">
+                    About Me
+                </h2>
+
+                <p>
+                    I am an MCA student specializing in Generative Artificial
+                    Intelligence with a strong interest in Artificial Intelligence,
+                    Machine Learning, Python and modern technologies. I enjoy
+                    learning new technologies, solving problems and developing
+                    creative solutions using AI.
+                </p>
+
+            </section>
+
+
+            <!-- OBJECTIVE -->
+
+            <section class="section">
+
+                <h2 class="section-title">
+                    Career Objective
+                </h2>
+
+                <p>
+                    To build a successful career in Artificial Intelligence and
+                    Generative AI by applying my technical knowledge, continuously
+                    developing my programming and problem-solving skills, gaining
+                    practical experience and contributing effectively to innovative
+                    projects and organizational growth.
+                </p>
+
+            </section>
+
+
+            <!-- EDUCATION -->
+
+            <section class="section" id="education">
+
+                <h2 class="section-title">
+                    Education
+                </h2>
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>S.No</th>
+
+                            <th>Institution</th>
+
+                            <th>Qualification</th>
+
+                            <th>Marks</th>
+
+                            <th>Percentage</th>
+
+                            <th>Year</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>1</td>
+
+                            <td>Alliance University</td>
+
+                            <td>MCA - Generative AI</td>
+
+                            <td>900</td>
+
+                            <td>90%</td>
+
+                            <td>2028</td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>2</td>
+
+                            <td>Alliance University</td>
+
+                            <td>MCA - Generative AI</td>
+
+                            <td>900</td>
+
+                            <td>90%</td>
+
+                            <td>2027</td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>3</td>
+
+                            <td>Alliance University</td>
+
+                            <td>MCA - Generative AI</td>
+
+                            <td>900</td>
+
+                            <td>90%</td>
+
+                            <td>2026</td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>4</td>
+
+                            <td>Alliance University</td>
+
+                            <td>MCA - Generative AI</td>
+
+                            <td>900</td>
+
+                            <td>90%</td>
+
+                            <td>2025</td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>5</td>
+
+                            <td>Alliance University</td>
+
+                            <td>MCA - Generative AI</td>
+
+                            <td>900</td>
+
+                            <td>90%</td>
+
+                            <td>2024</td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </section>
+
+
+            <!-- SKILLS -->
+
+            <section class="section" id="skills">
+
+                <h2 class="section-title">
+                    Technical Skills
+                </h2>
+
+                <div class="skills">
+
+                    <div class="skill">Python</div>
+
+                    <div class="skill">HTML</div>
+
+                    <div class="skill">CSS</div>
+
+                    <div class="skill">JavaScript</div>
+
+                    <div class="skill">Machine Learning</div>
+
+                    <div class="skill">Generative AI</div>
+
+                    <div class="skill">Artificial Intelligence</div>
+
+                    <div class="skill">Data Analysis</div>
+
+                    <div class="skill">Git & GitHub</div>
+
+                </div>
+
+            </section>
+
+
+            <!-- PROJECTS -->
+
+            <section class="section" id="projects">
+
+                <h2 class="section-title">
+                    Projects
+                </h2>
+
+
+                <div class="projects">
+
+
+                    <div class="project">
+
+                        <h3>
+                            AI-Based Generative Design System
+                        </h3>
+
+                        <p>
+                            An AI-based system designed to learn architectural
+                            design patterns and generate new house designs
+                            according to user requirements. The system focuses
+                            on AI-assisted generation of realistic interior
+                            and exterior designs.
+                        </p>
+
+                    </div>
+
+
+                    <div class="project">
+
+                        <h3>
+                            Fraud Detection in Financial Transactions
+                        </h3>
+
+                        <p>
+                            A machine learning project focused on identifying
+                            suspicious financial transactions using data
+                            preprocessing, analysis and machine learning
+                            techniques.
+                        </p>
+
+                    </div>
+
+
+                    <div class="project">
+
+                        <h3>
+                            Personal Portfolio Website
+                        </h3>
+
+                        <p>
+                            A responsive personal portfolio website created
+                            using HTML and CSS to present personal information,
+                            technical skills, projects and contact details.
+                        </p>
+
+                    </div>
+
+
+                    <div class="project">
+
+                        <h3>
+                            Data Analytics Dashboard
+                        </h3>
+
+                        <p>
+                            A data analytics project designed to transform
+                            structured data into meaningful visual insights
+                            using data analysis and visualization techniques.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+            <!-- EXPERIENCE -->
+
+            <section class="section">
+
+                <h2 class="section-title">
+                    Experience & Training
+                </h2>
+
+
+                <div class="experience">
+
+                    <h3>
+                        Academic & Technical Training
+                    </h3>
+
+                    <p>
+                        Gained practical exposure through academic projects,
+                        programming activities and hands-on learning in
+                        Artificial Intelligence, Machine Learning, Python,
+                        web development and data analysis.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- CERTIFICATIONS -->
+
+            <section class="section">
+
+                <h2 class="section-title">
+                    Certifications
+                </h2>
+
+
+                <div class="certificates">
+
+                    <div class="certificate">
+                        Python Programming
+                    </div>
+
+                    <div class="certificate">
+                        Artificial Intelligence
+                    </div>
+
+                    <div class="certificate">
+                        Machine Learning
+                    </div>
+
+                    <div class="certificate">
+                        Data Science
+                    </div>
+
+                    <div class="certificate">
+                        Generative AI
+                    </div>
+
+                    <div class="certificate">
+                        Web Development
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- STRENGTHS -->
+
+            <section class="section">
+
+                <h2 class="section-title">
+                    Strengths
+                </h2>
+
+
+                <ul class="strengths">
+
+                    <li>
+                        Quick learner and adaptable to new technologies
+                    </li>
+
+                    <li>
+                        Strong interest in Artificial Intelligence
+                    </li>
+
+                    <li>
+                        Problem-solving and analytical thinking
+                    </li>
+
+                    <li>
+                        Creative approach to technical projects
+                    </li>
+
+                    <li>
+                        Teamwork and communication
+                    </li>
+
+                </ul>
+
+            </section>
+
+
+            <!-- CONTACT -->
+
+            <section class="section" id="contact">
+
+                <h2 class="section-title">
+                    Contact
+                </h2>
+
+
+                <div class="contact-box">
+
+
+                    <div class="contact-item">
+
+                        <h3>Email</h3>
+
+                        <p>
+
+                            <a href="mailto:shrihae78@gmail.com">
+                                shrihae78@gmail.com
+                            </a>
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <h3>Phone</h3>
+
+                        <p>
+                            9876543210
+                        </p>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <h3>Course</h3>
+
+                        <p>
+                            MCA - Generative AI
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            <p>
+                © 2026 Shrihae | Personal Resume
+            </p>
+
+        </footer>
+
+
+    </div>
+
+
+</body>
+
+</html>

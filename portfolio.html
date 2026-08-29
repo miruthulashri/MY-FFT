@@ -1,0 +1,903 @@
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shrihae | AI & Generative AI Portfolio</title>
+
+    <style>
+
+        /* =========================
+           BASIC RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0b0614;
+            color: white;
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           NAVIGATION BAR
+        ========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(11, 6, 20, 0.95);
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid #2b1b42;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #c084fc;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #c084fc;
+        }
+
+
+        /* =========================
+           COMMON SECTION
+        ========================= */
+
+        section {
+            min-height: 100vh;
+            padding: 110px 8% 70px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            color: #c084fc;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #aaa;
+        }
+
+
+        /* =========================
+           HOME SECTION
+        ========================= */
+
+        #home {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background:
+                radial-gradient(circle at top right, #35135c, transparent 35%),
+                radial-gradient(circle at bottom left, #24103f, transparent 35%),
+                #0b0614;
+        }
+
+        .hero {
+            max-width: 850px;
+        }
+
+        .hero-small {
+            color: #c084fc;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 65px;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 span {
+            color: #c084fc;
+        }
+
+        .hero h2 {
+            font-size: 30px;
+            color: #ddd;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: #aaa;
+            max-width: 650px;
+            margin: auto;
+            font-size: 17px;
+        }
+
+        .hero-buttons {
+            margin-top: 35px;
+        }
+
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            padding: 13px 28px;
+            margin: 8px;
+            border-radius: 30px;
+            border: 1px solid #c084fc;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .primary-btn {
+            background-color: #7e22ce;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(192, 132, 252, 0.25);
+            background-color: #9333ea;
+        }
+
+
+        /* =========================
+           ABOUT SECTION
+        ========================= */
+
+        #about {
+            background-color: #10091b;
+        }
+
+        .about-container {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            max-width: 650px;
+        }
+
+        .about-text p {
+            color: #bbb;
+            margin-bottom: 18px;
+            font-size: 16px;
+        }
+
+        .about-card {
+            background-color: #181024;
+            border: 1px solid #302040;
+            border-radius: 18px;
+            padding: 30px;
+            width: 300px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+        }
+
+        .about-card h3 {
+            color: #c084fc;
+            margin-bottom: 15px;
+        }
+
+        .about-card p {
+            color: #bbb;
+            margin: 8px 0;
+        }
+
+
+        /* =========================
+           SKILLS SECTION
+        ========================= */
+
+        #skills {
+            background-color: #0b0614;
+        }
+
+        .skills-container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .skill {
+            margin-bottom: 25px;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .skill-name span:last-child {
+            color: #c084fc;
+        }
+
+        .skill-bar {
+            height: 10px;
+            background-color: #241832;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background-color: #9333ea;
+            border-radius: 10px;
+        }
+
+        .python {
+            width: 90%;
+        }
+
+        .html {
+            width: 85%;
+        }
+
+        .javascript {
+            width: 70%;
+        }
+
+        .ml {
+            width: 80%;
+        }
+
+        .genai {
+            width: 85%;
+        }
+
+        .java {
+            width: 70%;
+        }
+
+
+        /* =========================
+           PROJECT SECTION
+        ========================= */
+
+        #projects {
+            background-color: #10091b;
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background-color: #181024;
+            border: 1px solid #302040;
+            border-radius: 18px;
+            padding: 30px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: #a855f7;
+            box-shadow: 0 15px 35px rgba(168, 85, 247, 0.15);
+        }
+
+        .project-number {
+            color: #c084fc;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .project-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .project-card p {
+            color: #aaa;
+            margin-bottom: 20px;
+        }
+
+        .project-tags span {
+            display: inline-block;
+            background-color: #251735;
+            color: #c084fc;
+            padding: 6px 12px;
+            border-radius: 15px;
+            margin: 4px;
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           EDUCATION SECTION
+        ========================= */
+
+        #education {
+            background-color: #0b0614;
+        }
+
+        .education-container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .education-card {
+            background-color: #181024;
+            border-left: 4px solid #a855f7;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+        }
+
+        .education-card h3 {
+            color: #c084fc;
+            margin-bottom: 8px;
+        }
+
+        .education-card h4 {
+            margin-bottom: 8px;
+        }
+
+        .education-card p {
+            color: #aaa;
+        }
+
+
+        /* =========================
+           CONTACT SECTION
+        ========================= */
+
+        #contact {
+            background:
+                radial-gradient(circle at center, #24103f, transparent 55%),
+                #10091b;
+            text-align: center;
+        }
+
+        .contact-box {
+            max-width: 650px;
+            margin: auto;
+            background-color: #181024;
+            border: 1px solid #302040;
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        .contact-box p {
+            color: #bbb;
+            margin: 15px 0;
+        }
+
+        .contact-box a {
+            color: #c084fc;
+            text-decoration: none;
+        }
+
+        .contact-box a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background-color: #07040d;
+            color: #777;
+            border-top: 1px solid #241832;
+        }
+
+        footer span {
+            color: #c084fc;
+        }
+
+
+        /* =========================
+           RESPONSIVE DESIGN
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            header {
+                padding: 15px 5%;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 13px;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero h2 {
+                font-size: 24px;
+            }
+
+            section {
+                padding: 110px 6% 60px;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+
+            .about-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <header>
+
+        <div class="logo">Shrihae.</div>
+
+        <nav>
+
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         HOME
+    ========================== -->
+
+    <section id="home">
+
+        <div class="hero">
+
+            <div class="hero-small">
+                Hello, I'm
+            </div>
+
+            <h1>Shri<span>hae</span></h1>
+
+            <h2>MCA Student | Generative AI Enthusiast</h2>
+
+            <p>
+                I am passionate about Artificial Intelligence,
+                Machine Learning and Generative AI. I enjoy
+                transforming ideas into creative and practical
+                technology solutions.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#projects" class="btn primary-btn">
+                    View My Projects
+                </a>
+
+                <a href="#contact" class="btn">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section id="about">
+
+        <div class="section-title">
+
+            <h2>About Me</h2>
+
+            <p>Get to know me and my interests</p>
+
+        </div>
+
+
+        <div class="about-container">
+
+            <div class="about-text">
+
+                <p>
+                    Hello! I am Shrihae, an MCA student specializing
+                    in Generative Artificial Intelligence. I have a
+                    strong interest in Artificial Intelligence,
+                    Machine Learning, Python and modern technologies.
+                </p>
+
+                <p>
+                    I enjoy learning new concepts, exploring emerging
+                    technologies and building projects that solve
+                    real-world problems.
+                </p>
+
+                <p>
+                    My goal is to continuously improve my technical
+                    skills and create innovative solutions using
+                    Artificial Intelligence.
+                </p>
+
+            </div>
+
+
+            <div class="about-card">
+
+                <h3>Quick Information</h3>
+
+                <p><b>Course:</b> MCA – Generative AI</p>
+
+                <p><b>Field:</b> Artificial Intelligence</p>
+
+                <p><b>Primary Language:</b> Python</p>
+
+                <p><b>Interest:</b> Generative AI</p>
+
+                <p><b>Goal:</b> AI Developer</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SKILLS
+    ========================== -->
+
+    <section id="skills">
+
+        <div class="section-title">
+
+            <h2>My Skills</h2>
+
+            <p>Technologies and areas I am developing</p>
+
+        </div>
+
+
+        <div class="skills-container">
+
+
+            <div class="skill">
+
+                <div class="skill-name">
+                    <span>Python</span>
+                    <span>90%</span>
+                </div>
+
+                <div class="skill-bar">
+                    <div class="skill-progress python"></div>
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-name">
+                    <span>HTML & CSS</span>
+                    <span>85%</span>
+                </div>
+
+                <div class="skill-bar">
+                    <div class="skill-progress html"></div>
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-name">
+                    <span>Generative AI</span>
+                    <span>85%</span>
+                </div>
+
+                <div class="skill-bar">
+                    <div class="skill-progress genai"></div>
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-name">
+                    <span>Machine Learning</span>
+                    <span>80%</span>
+                </div>
+
+                <div class="skill-bar">
+                    <div class="skill-progress ml"></div>
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-name">
+                    <span>JavaScript</span>
+                    <span>70%</span>
+                </div>
+
+                <div class="skill-bar">
+                    <div class="skill-progress javascript"></div>
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-name">
+                    <span>Java</span>
+                    <span>70%</span>
+                </div>
+
+                <div class="skill-bar">
+                    <div class="skill-progress java"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROJECTS
+    ========================== -->
+
+    <section id="projects">
+
+        <div class="section-title">
+
+            <h2>My Projects</h2>
+
+            <p>Some of the projects I have worked on</p>
+
+        </div>
+
+
+        <div class="projects-container">
+
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 01
+                </div>
+
+                <h3>AI-Based Generative Design System</h3>
+
+                <p>
+                    An AI-based system that learns architectural
+                    design patterns and generates new house designs
+                    according to user requirements.
+                </p>
+
+                <div class="project-tags">
+
+                    <span>Python</span>
+                    <span>AI</span>
+                    <span>Generative AI</span>
+                    <span>Machine Learning</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 02
+                </div>
+
+                <h3>Food Delivery Decision System</h3>
+
+                <p>
+                    A Python-based decision system that calculates
+                    delivery charges and generates a final order
+                    report according to different conditions.
+                </p>
+
+                <div class="project-tags">
+
+                    <span>Python</span>
+                    <span>Decision System</span>
+                    <span>Logic</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 03
+                </div>
+
+                <h3>Student Registration Form</h3>
+
+                <p>
+                    A responsive student registration interface
+                    created using HTML and CSS with structured
+                    input fields and interactive styling.
+                </p>
+
+                <div class="project-tags">
+
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>Web Design</span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         EDUCATION
+    ========================== -->
+
+    <section id="education">
+
+        <div class="section-title">
+
+            <h2>Education</h2>
+
+            <p>My academic journey</p>
+
+        </div>
+
+
+        <div class="education-container">
+
+
+            <div class="education-card">
+
+                <h3>Master of Computer Applications</h3>
+
+                <h4>Generative Artificial Intelligence</h4>
+
+                <p>
+                    Currently pursuing MCA with a specialization
+                    in Generative Artificial Intelligence.
+                </p>
+
+            </div>
+
+
+            <div class="education-card">
+
+                <h3>Bachelor of Science</h3>
+
+                <h4>Computer Science – Artificial Intelligence</h4>
+
+                <p>
+                    Completed undergraduate studies with a focus
+                    on Computer Science and Artificial Intelligence.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section id="contact">
+
+        <div class="section-title">
+
+            <h2>Contact Me</h2>
+
+            <p>Let's connect and create something amazing</p>
+
+        </div>
+
+
+        <div class="contact-box">
+
+            <p>
+                <b>Name:</b> Shrihae
+            </p>
+
+            <p>
+                <b>Email:</b>
+                <a href="mailto:shrihae78@gmail.com">
+                    shrihae78@gmail.com
+                </a>
+            </p>
+
+            <p>
+                <b>Phone:</b> 9876543210
+            </p>
+
+            <p>
+                <b>Field:</b> Generative Artificial Intelligence
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            © 2026 <span>Shrihae</span>.
+            Designed and developed as a personal portfolio.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

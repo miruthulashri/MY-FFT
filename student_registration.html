@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Modern Student Registration Form created using HTML and CSS">
+
+    <title>Student Registration | Mini Project</title>
+
+    <style>
+
+        /* ---------- BASIC SETTINGS ---------- */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            padding: 40px 20px;
+
+            background:
+                radial-gradient(circle at top left, #dbeafe, transparent 35%),
+                radial-gradient(circle at bottom right, #c7d2fe, transparent 35%),
+                linear-gradient(135deg, #eef4ff, #f8fafc);
+
+            color: #1e293b;
+        }
+
+
+        /* ---------- MAIN CONTAINER ---------- */
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+
+        /* ---------- PAGE HEADING ---------- */
+
+        .page-heading {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .page-heading h1 {
+            font-size: 36px;
+            color: #173b6c;
+            margin-bottom: 8px;
+        }
+
+        .page-heading p {
+            color: #64748b;
+            font-size: 15px;
+        }
+
+
+        /* ---------- FORM CARD ---------- */
+
+        .form-card {
+            background: #ffffff;
+            border: 1px solid #dbe3ef;
+            border-radius: 18px;
+            padding: 40px;
+
+            box-shadow:
+                0 20px 45px rgba(15, 35, 65, 0.12),
+                0 5px 15px rgba(15, 35, 65, 0.06);
+        }
+
+
+        /* ---------- SECTION ---------- */
+
+        fieldset {
+            border: none;
+            margin-bottom: 30px;
+        }
+
+        legend {
+            width: 100%;
+            font-size: 20px;
+            font-weight: bold;
+            color: #174a7c;
+
+            padding-bottom: 10px;
+            margin-bottom: 22px;
+
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+
+        /* ---------- FORM GRID ---------- */
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px 25px;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+
+        /* ---------- FORM GROUP ---------- */
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #334155;
+        }
+
+        .required {
+            color: #dc2626;
+        }
+
+
+        /* ---------- INPUTS ---------- */
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        select,
+        textarea {
+
+            width: 100%;
+            padding: 13px 14px;
+
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+
+            background-color: #f8fafc;
+
+            color: #1e293b;
+
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+
+            outline: none;
+
+            transition:
+                border-color 0.3s ease,
+                box-shadow 0.3s ease,
+                background-color 0.3s ease;
+        }
+
+
+        /* ---------- PLACEHOLDER ---------- */
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #94a3b8;
+        }
+
+
+        /* ---------- INPUT FOCUS ---------- */
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        input[type="date"]:focus,
+        select:focus,
+        textarea:focus {
+
+            border-color: #2563eb;
+
+            background-color: #ffffff;
+
+            box-shadow:
+                0 0 0 3px rgba(37, 99, 235, 0.10),
+                0 5px 15px rgba(37, 99, 235, 0.08);
+        }
+
+
+        /* ---------- SELECT ---------- */
+
+        select {
+            cursor: pointer;
+        }
+
+
+        /* ---------- GENDER ---------- */
+
+        .gender-options {
+            display: flex;
+            gap: 12px;
+        }
+
+        .gender-option {
+            flex: 1;
+            position: relative;
+        }
+
+        .gender-option input {
+            position: absolute;
+            opacity: 0;
+        }
+
+        .gender-option label {
+            display: block;
+            text-align: center;
+
+            padding: 13px 10px;
+
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+
+            background-color: #f8fafc;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .gender-option label:hover {
+            border-color: #3b82f6;
+            background-color: #eff6ff;
+        }
+
+        .gender-option input:checked + label {
+            background-color: #2563eb;
+            border-color: #2563eb;
+            color: white;
+
+            box-shadow:
+                0 5px 12px rgba(37, 99, 235, 0.25);
+        }
+
+
+        /* ---------- TEXTAREA ---------- */
+
+        textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+
+        /* ---------- HELP TEXT ---------- */
+
+        .help-text {
+            font-size: 12px;
+            color: #64748b;
+            margin-top: 6px;
+        }
+
+
+        /* ---------- FILE UPLOAD ---------- */
+
+        .file-box {
+            border: 2px dashed #94a3b8;
+            border-radius: 9px;
+
+            padding: 18px;
+
+            background-color: #f8fafc;
+
+            text-align: center;
+
+            transition: 0.3s;
+        }
+
+        .file-box:hover {
+            border-color: #2563eb;
+            background-color: #eff6ff;
+        }
+
+        .file-box input[type="file"] {
+            width: 100%;
+            cursor: pointer;
+        }
+
+
+        /* ---------- BUTTONS ---------- */
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+
+            margin-top: 10px;
+            padding-top: 25px;
+
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .btn {
+            min-width: 160px;
+
+            padding: 13px 25px;
+
+            border: none;
+            border-radius: 8px;
+
+            font-size: 15px;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                background-color 0.3s ease;
+        }
+
+
+        /* ---------- SUBMIT BUTTON ---------- */
+
+        .submit-btn {
+            background-color: #2563eb;
+            color: white;
+        }
+
+        .submit-btn:hover {
+            background-color: #1d4ed8;
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 8px 18px rgba(37, 99, 235, 0.30);
+        }
+
+
+        /* ---------- RESET BUTTON ---------- */
+
+        .reset-btn {
+            background-color: #e2e8f0;
+            color: #334155;
+        }
+
+        .reset-btn:hover {
+            background-color: #cbd5e1;
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 8px 18px rgba(15, 23, 42, 0.12);
+        }
+
+
+        /* ---------- FOOTER ---------- */
+
+        .footer {
+            text-align: center;
+            margin-top: 22px;
+
+            font-size: 12px;
+            color: #64748b;
+        }
+
+
+        /* ---------- RESPONSIVE DESIGN ---------- */
+
+        @media (max-width: 700px) {
+
+            body {
+                padding: 25px 15px;
+            }
+
+            .page-heading h1 {
+                font-size: 28px;
+            }
+
+            .form-card {
+                padding: 25px 20px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .full-width {
+                grid-column: auto;
+            }
+
+            .gender-options {
+                flex-direction: column;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="container">
+
+
+        <!-- PAGE HEADING -->
+
+        <div class="page-heading">
+
+            <h1>Student Registration</h1>
+
+            <p>
+                Please complete the form below with your personal and academic details.
+            </p>
+
+        </div>
+
+
+        <!-- FORM CARD -->
+
+        <div class="form-card">
+
+
+            <form>
+
+
+                <!-- PERSONAL DETAILS -->
+
+                <fieldset>
+
+                    <legend>Personal Details</legend>
+
+
+                    <div class="form-grid">
+
+
+                        <!-- REGISTRATION ID -->
+
+                        <div class="form-group">
+
+                            <label for="regid">
+                                Registration ID <span class="required">*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="regid"
+                                name="regid"
+                                placeholder="Enter your registration ID"
+                                autocomplete="off"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- FULL NAME -->
+
+                        <div class="form-group">
+
+                            <label for="name">
+                                Full Name <span class="required">*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                minlength="15"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                                required
+                            >
+
+                            <span class="help-text">
+                                Minimum 15 characters
+                            </span>
+
+                        </div>
+
+
+                        <!-- GENDER -->
+
+                        <div class="form-group">
+
+                            <label>
+                                Gender <span class="required">*</span>
+                            </label>
+
+                            <div class="gender-options">
+
+
+                                <div class="gender-option">
+
+                                    <input
+                                        type="radio"
+                                        id="male"
+                                        name="gender"
+                                        value="Male"
+                                        required
+                                    >
+
+                                    <label for="male">
+                                        Male
+                                    </label>
+
+                                </div>
+
+
+                                <div class="gender-option">
+
+                                    <input
+                                        type="radio"
+                                        id="female"
+                                        name="gender"
+                                        value="Female"
+                                    >
+
+                                    <label for="female">
+                                        Female
+                                    </label>
+
+                                </div>
+
+
+                                <div class="gender-option">
+
+                                    <input
+                                        type="radio"
+                                        id="other"
+                                        name="gender"
+                                        value="Other"
+                                    >
+
+                                    <label for="other">
+                                        Other
+                                    </label>
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- DATE OF BIRTH -->
+
+                        <div class="form-group">
+
+                            <label for="dob">
+                                Date of Birth <span class="required">*</span>
+                            </label>
+
+                            <input
+                                type="date"
+                                id="dob"
+                                name="dob"
+                                required
+                            >
+
+                        </div>
+
+
+                    </div>
+
+                </fieldset>
+
+
+
+                <!-- CONTACT DETAILS -->
+
+                <fieldset>
+
+                    <legend>Contact Details</legend>
+
+
+                    <div class="form-grid">
+
+
+                        <!-- EMAIL -->
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                Email Address <span class="required">*</span>
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Enter your email address"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- PHONE -->
+
+                        <div class="form-group">
+
+                            <label for="phone">
+                                Phone Number <span class="required">*</span>
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                pattern="[0-9]{10}"
+                                placeholder="Enter 10-digit phone number"
+                                autocomplete="tel"
+                                required
+                            >
+
+                            <span class="help-text">
+                                Enter exactly 10 digits
+                            </span>
+
+                        </div>
+
+
+                        <!-- ADDRESS -->
+
+                        <div class="form-group full-width">
+
+                            <label for="address">
+                                Address <span class="required">*</span>
+                            </label>
+
+                            <textarea
+                                id="address"
+                                name="address"
+                                placeholder="Enter your complete address"
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+                    </div>
+
+                </fieldset>
+
+
+
+                <!-- ACADEMIC DETAILS -->
+
+                <fieldset>
+
+                    <legend>Academic Details</legend>
+
+
+                    <div class="form-grid">
+
+
+                        <!-- DEPARTMENT -->
+
+                        <div class="form-group">
+
+                            <label for="department">
+                                Department <span class="required">*</span>
+                            </label>
+
+                            <select
+                                id="department"
+                                name="department"
+                                required
+                            >
+
+                                <option value="">
+                                    Select your department
+                                </option>
+
+                                <option>
+                                    Computer Science
+                                </option>
+
+                                <option>
+                                    Artificial Intelligence
+                                </option>
+
+                                <option>
+                                    Data Science
+                                </option>
+
+                                <option>
+                                    Information Technology
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- COURSE -->
+
+                        <div class="form-group">
+
+                            <label for="course">
+                                Course <span class="required">*</span>
+                            </label>
+
+                            <select
+                                id="course"
+                                name="course"
+                                required
+                            >
+
+                                <option value="">
+                                    Select your course
+                                </option>
+
+                                <option>BCA</option>
+                                <option>BSc</option>
+                                <option>MCA</option>
+                                <option>MSc</option>
+                                <option>MBA</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- SECTION -->
+
+                        <div class="form-group">
+
+                            <label for="section">
+                                Section <span class="required">*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="section"
+                                name="section"
+                                placeholder="Enter your section"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- COLLEGE -->
+
+                        <div class="form-group">
+
+                            <label for="college">
+                                College <span class="required">*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="college"
+                                name="college"
+                                placeholder="Enter your college name"
+                                required
+                            >
+
+                        </div>
+
+
+                    </div>
+
+                </fieldset>
+
+
+
+                <!-- DOCUMENT -->
+
+                <fieldset>
+
+                    <legend>Document</legend>
+
+
+                    <div class="form-group">
+
+                        <label for="resume">
+                            Resume
+                        </label>
+
+
+                        <div class="file-box">
+
+                            <input
+                                type="file"
+                                id="resume"
+                                name="resume"
+                                accept=".pdf,.doc,.docx"
+                            >
+
+                            <span class="help-text">
+                                Accepted formats: PDF, DOC, DOCX
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </fieldset>
+
+
+
+                <!-- BUTTONS -->
+
+                <div class="buttons">
+
+                    <input
+                        type="submit"
+                        value="Submit Registration"
+                        class="btn submit-btn"
+                    >
+
+                    <input
+                        type="reset"
+                        value="Clear Form"
+                        class="btn reset-btn"
+                    >
+
+                </div>
+
+
+            </form>
+
+        </div>
+
+
+        <!-- FOOTER -->
+
+        <div class="footer">
+
+            Student Registration Mini Project • HTML & CSS
+
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>
