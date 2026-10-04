@@ -1,0 +1,857 @@
+<html>
+
+<head>
+
+    <title>Semantic Department Website</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f3fa;
+            color: #333;
+        }
+
+
+        /* HEADER */
+
+        header {
+            background-color: #5b3a70;
+            color: white;
+            padding: 25px 40px;
+        }
+
+        header h1 {
+            text-align: center;
+            font-family: Georgia, serif;
+            font-size: 38px;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            text-align: center;
+            color: #eee4f2;
+            font-size: 17px;
+            margin-bottom: 22px;
+        }
+
+
+        /* NAVIGATION */
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background-color: #806095;
+        }
+
+
+        /* MAIN */
+
+        main {
+            width: 92%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+
+        /* SECTIONS */
+
+        section {
+            background-color: white;
+            margin: 25px 0;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px #ddd;
+        }
+
+        h2 {
+            text-align: center;
+            font-family: Georgia, serif;
+            font-size: 30px;
+            color: #5b3a70;
+            margin-bottom: 28px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #555;
+        }
+
+
+        /* HOME */
+
+        .intro {
+            text-align: center;
+            max-width: 950px;
+            margin: auto;
+        }
+
+        marquee {
+            margin: 30px 0;
+            padding: 12px;
+            background-color: #eee4f3;
+            color: #704c82;
+            font-family: Georgia, serif;
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+
+        /* HIGHLIGHTS */
+
+        .images {
+            display: flex;
+            justify-content: space-between;
+            gap: 22px;
+        }
+
+        .image-box {
+            width: 25%;
+            text-align: center;
+            background-color: #faf8fb;
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .image-title {
+            padding: 13px 5px 5px;
+            font-family: Georgia, serif;
+            font-size: 19px;
+            font-weight: bold;
+            color: #5b3a70;
+        }
+
+
+        /* CONTENT */
+
+        .content {
+            width: 85%;
+            margin: auto;
+        }
+
+        .content h3 {
+            color: #704c82;
+            font-family: Georgia, serif;
+            margin: 20px 0 8px;
+            font-size: 21px;
+        }
+
+        .content ul {
+            margin: 15px 0 15px 25px;
+            line-height: 2;
+            font-size: 18px;
+            color: #555;
+        }
+
+
+        /* FACULTY */
+
+        .faculty {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .faculty-name {
+            display: inline-block;
+            padding: 18px 45px;
+            background-color: #eee4f3;
+            border-radius: 6px;
+            color: #5b3a70;
+            font-family: Georgia, serif;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+
+        /* COURSES */
+
+        .course-list {
+            width: 75%;
+            margin: auto;
+        }
+
+        .course-list li {
+            list-style-type: square;
+            padding: 8px;
+            font-size: 18px;
+            color: #555;
+        }
+
+
+        /* TIMETABLE */
+
+        table {
+            width: 95%;
+            margin: auto;
+            border-collapse: collapse;
+            font-size: 16px;
+        }
+
+        th {
+            background-color: #6b477d;
+            color: white;
+            padding: 13px;
+        }
+
+        td {
+            border: 1px solid #bbb;
+            padding: 12px;
+            text-align: center;
+            color: #555;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f5eff8;
+        }
+
+
+        /* ACHIEVEMENTS */
+
+        .simple-list {
+            width: 80%;
+            margin: auto;
+        }
+
+        .simple-list li {
+            font-size: 18px;
+            color: #555;
+            padding: 9px;
+        }
+
+
+        /* CONTACT */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            margin: 10px;
+        }
+
+        form {
+            width: 60%;
+            margin: 25px auto;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #bbb;
+            border-radius: 4px;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+        }
+
+        textarea {
+            height: 100px;
+            resize: none;
+        }
+
+        button {
+            background-color: #6b477d;
+            color: white;
+            border: none;
+            padding: 11px 28px;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #4d315e;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            background-color: #5b3a70;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        footer p {
+            color: white;
+            font-size: 15px;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 750px) {
+
+            .images {
+                flex-direction: column;
+            }
+
+            .image-box {
+                width: 100%;
+            }
+
+            form {
+                width: 90%;
+            }
+
+            table {
+                font-size: 13px;
+            }
+
+            nav {
+                gap: 2px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <h1>
+        Semantic Department Website
+    </h1>
+
+    <p>
+        MCA | Alliance University
+    </p>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <a href="#home">Home</a>
+
+        <a href="#about">About</a>
+
+        <a href="#faculty">Faculty</a>
+
+        <a href="#courses">Courses</a>
+
+        <a href="#timetable">Timetable</a>
+
+        <a href="#achievements">Achievements</a>
+
+        <a href="#events">Events</a>
+
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- MAIN -->
+
+<main>
+
+
+    <!-- HOME -->
+
+    <section id="home">
+
+        <div class="intro">
+
+            <p>
+
+                The Department of Master of Computer Applications
+                provides students with advanced knowledge and
+                practical skills in computer applications,
+                programming, databases, artificial intelligence,
+                machine learning, data science and modern
+                computing technologies.
+
+            </p>
+
+        </div>
+
+
+        <!-- RUNNING MESSAGE -->
+
+        <marquee>
+
+            Dear MCA Graduates, Welcome to AU
+
+        </marquee>
+
+
+        <!-- HIGHLIGHTS -->
+
+        <h2>Department Highlights</h2>
+
+
+        <div class="images">
+
+
+            <!-- GENERATIVE AI -->
+
+            <article class="image-box">
+
+                <img
+                    src="https://images.unsplash.com/photo-1677442136019-21780ecad995"
+                    alt="Generative AI">
+
+                <div class="image-title">
+                    GENERATIVE AI
+                </div>
+
+            </article>
+
+
+            <!-- AI AND ML -->
+
+            <article class="image-box">
+
+                <img
+                    src="https://images.unsplash.com/photo-1555255707-c07966088b7b"
+                    alt="Artificial Intelligence and Machine Learning">
+
+                <div class="image-title">
+                    AI &amp; ML
+                </div>
+
+            </article>
+
+
+            <!-- DATA SCIENCE -->
+
+            <article class="image-box">
+
+                <img
+                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+                    alt="Data Science">
+
+                <div class="image-title">
+                    DATA SCIENCE
+                </div>
+
+            </article>
+
+
+            <!-- CYBER SECURITY -->
+
+            <article class="image-box">
+
+                <img
+                    src="https://images.unsplash.com/photo-1563013544-824ae1b704d3"
+                    alt="Cyber Security">
+
+                <div class="image-title">
+                    CYBER SECURITY
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <h2>About Department</h2>
+
+
+        <div class="content">
+
+            <h3>Vision</h3>
+
+            <p>
+
+                To develop skilled and responsible professionals
+                with strong technical knowledge and practical
+                abilities in computer applications.
+
+            </p>
+
+
+            <h3>Mission</h3>
+
+            <p>
+
+                To provide quality education, practical learning
+                and opportunities for students to explore
+                emerging technologies.
+
+            </p>
+
+
+            <h3>Objectives</h3>
+
+            <ul>
+
+                <li>
+                    Develop strong programming and technical skills.
+                </li>
+
+                <li>
+                    Provide practical knowledge through projects.
+                </li>
+
+                <li>
+                    Encourage creativity and innovative thinking.
+                </li>
+
+                <li>
+                    Prepare students for professional careers.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- FACULTY -->
+
+    <section id="faculty">
+
+        <h2>Faculty</h2>
+
+
+        <div class="faculty">
+
+            <div class="faculty-name">
+
+                Veera Raghav Kathula
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- COURSES -->
+
+    <section id="courses">
+
+        <h2>Courses</h2>
+
+
+        <div class="course-list">
+
+            <ul>
+
+                <li>Programming</li>
+
+                <li>Data Structures</li>
+
+                <li>Database Management Systems</li>
+
+                <li>Web Technologies</li>
+
+                <li>Artificial Intelligence</li>
+
+                <li>Machine Learning</li>
+
+                <li>Data Science</li>
+
+                <li>Generative AI</li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- TIMETABLE -->
+
+    <section id="timetable">
+
+        <h2>Timetable</h2>
+
+
+        <table>
+
+            <tr>
+
+                <th>Day</th>
+
+                <th>9:00 - 10:00</th>
+
+                <th>10:00 - 11:00</th>
+
+                <th>11:15 - 12:15</th>
+
+                <th>1:00 - 2:00</th>
+
+            </tr>
+
+
+            <tr>
+
+                <td>Monday</td>
+
+                <td>Python</td>
+
+                <td>DBMS</td>
+
+                <td>AI</td>
+
+                <td>Lab</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>Tuesday</td>
+
+                <td>Data Science</td>
+
+                <td>Python</td>
+
+                <td>Machine Learning</td>
+
+                <td>Lab</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>Wednesday</td>
+
+                <td>DBMS</td>
+
+                <td>Web Technology</td>
+
+                <td>Generative AI</td>
+
+                <td>Project</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>Thursday</td>
+
+                <td>AI</td>
+
+                <td>Data Science</td>
+
+                <td>Python</td>
+
+                <td>Lab</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>Friday</td>
+
+                <td>Machine Learning</td>
+
+                <td>Web Technology</td>
+
+                <td>Generative AI</td>
+
+                <td>Seminar</td>
+
+            </tr>
+
+        </table>
+
+    </section>
+
+
+
+    <!-- ACHIEVEMENTS -->
+
+    <section id="achievements">
+
+        <h2>Achievements</h2>
+
+
+        <div class="simple-list">
+
+            <ul>
+
+                <li>
+                    Students participate in technical competitions.
+                </li>
+
+                <li>
+                    Students develop innovative academic projects.
+                </li>
+
+                <li>
+                    Students participate in hackathons.
+                </li>
+
+                <li>
+                    Students gain practical experience through projects.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- EVENTS -->
+
+    <section id="events">
+
+        <h2>Events</h2>
+
+
+        <div class="simple-list">
+
+            <ul>
+
+                <li>Technical Workshops</li>
+
+                <li>Seminars</li>
+
+                <li>Hackathons</li>
+
+                <li>Project Exhibitions</li>
+
+                <li>Student Development Activities</li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+        <h2>Contact</h2>
+
+
+        <div class="contact">
+
+            <p>
+                <b>Department:</b>
+                Master of Computer Applications (MCA)
+            </p>
+
+            <p>
+                <b>University:</b>
+                Alliance University, Bengaluru
+            </p>
+
+            <p>
+                <b>Course:</b>
+                Front-End Frameworks and Technologies
+            </p>
+
+            <p>
+                <b>Faculty:</b>
+                Veera Raghav Kathula
+            </p>
+
+
+            <h3>Contact Form</h3>
+
+
+            <form>
+
+                <input
+                    type="text"
+                    placeholder="Enter your name">
+
+
+                <input
+                    type="email"
+                    placeholder="Enter your email">
+
+
+                <textarea
+                    placeholder="Enter your message">
+                </textarea>
+
+
+                <button type="submit">
+                    Submit
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 Department of Master of Computer Applications | Alliance University
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
