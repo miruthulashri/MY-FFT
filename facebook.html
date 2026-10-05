@@ -1,0 +1,99 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facebook - Log In</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .box {
+      width: 300px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #1877f2;
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+
+    .btn-login {
+      width: 100%;
+      padding: 12px;
+      background: #1877f2;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    a {
+      display: block;
+      margin: 15px 0;
+      color: #1877f2;
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #ddd;
+      margin-bottom: 15px;
+    }
+
+    .btn-create {
+      padding: 10px 16px;
+      background: #42b72a;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h1>facebook</h1>
+    <div class="card">
+      <form>
+        <input type="text" placeholder="Email or phone number" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit" class="btn-login">Log In</button>
+      </form>
+      <a href="#">Forgot password?</a>
+      <hr>
+      <button class="btn-create">Create new account</button>
+    </div>
+  </div>
+
+</body>
+</html>
