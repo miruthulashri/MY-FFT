@@ -1,0 +1,181 @@
+<html>
+
+<head>
+
+    <title>Bangtan Day</title>
+
+    <style>
+
+        body {
+            background: linear-gradient(135deg, #120b18, #30203d, #5b3970);
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 30px;
+        }
+
+        .card {
+            width: 900px;
+            min-height: 720px;
+            margin: 20px auto;
+            padding: 35px;
+            background-color: #21162b;
+            border-radius: 35px;
+            border: 1px solid #9b72b5;
+            box-shadow: 0 12px 35px black;
+            box-sizing: border-box;
+
+            animation-name: appear;
+            animation-duration: 1.5s;
+            animation-timing-function: ease;
+        }
+
+        .top {
+            color: #c9a8df;
+            font-size: 16px;
+            letter-spacing: 5px;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            color: white;
+            font-size: 40px;
+            margin: 10px;
+        }
+
+        h3 {
+            color: #d8c5e5;
+            font-size: 19px;
+            font-weight: normal;
+            margin-bottom: 28px;
+        }
+
+        .image-box {
+            width: 700px;
+            height: 395px;
+            margin: 20px auto;
+            background-color: #0d0910;
+            border: 2px solid #a77bc4;
+            border-radius: 22px;
+            box-shadow: 0 6px 22px black;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-box img {
+            width: 390px;
+            height: 700px;
+            object-fit: cover;
+            transform: rotate(-90deg);
+            border-radius: 12px;
+        }
+
+        p {
+            width: 750px;
+            margin: 25px auto;
+            color: #ded0e7;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        .quote {
+            color: #c79be2;
+            font-size: 18px;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 13px 32px;
+            font-size: 17px;
+            background-color: #8e44ad;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 5px 12px black;
+        }
+
+        button:hover {
+            background-color: #a85cc7;
+        }
+
+        @keyframes appear {
+
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="card">
+
+        <div class="top">BANGTAN DAY</div>
+
+        <h1>Happy Bangtan Day</h1>
+
+        <h3>
+            Seven voices. One journey. Countless memories.
+        </h3>
+
+
+        <!-- INSERT BTS IMAGE HERE -->
+
+        <div class="image-box">
+
+            <img src="./Bangtan Boys.jpg" alt="BTS">
+
+        </div>
+
+
+        <p>
+            More than music, Bangtan became a story of dreams,
+            friendship, courage and hope. Through every song,
+            every stage and every chapter, they have created
+            memories that live far beyond the moment.
+        </p>
+
+
+        <div class="quote">
+            "Seven stars, one unforgettable journey."
+        </div>
+
+
+        <br>
+
+
+        <button onclick="celebrate()">
+            Celebrate
+        </button>
+
+    </div>
+
+
+    <script>
+
+        function celebrate() {
+
+            alert("Happy Bangtan Day!");
+
+        }
+
+    </script>
+
+</body>
+
+</html>
