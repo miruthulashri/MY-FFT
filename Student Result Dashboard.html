@@ -1,0 +1,286 @@
+<html>
+<head>
+    <title>Student Result Dashboard</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #eaf4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .box {
+            width: 750px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #b5caca;
+        }
+
+        h1 {
+            text-align: center;
+            color: #145c63;
+        }
+
+        input, select, button {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #147d83;
+            color: white;
+            cursor: pointer;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #cbdada;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #cce9e7;
+            color: #164e52;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2fafa;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e2f3f1;
+            border-radius: 8px;
+            color: #164e52;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>Student Result Dashboard</h1>
+
+    <input type="text" id="search" placeholder="Search student"
+           onkeyup="searchStudent()">
+
+    <select id="filter" onchange="filterStudent()">
+        <option value="All">All Students</option>
+        <option value="Pass">Pass</option>
+        <option value="Fail">Fail</option>
+    </select>
+
+    <button onclick="showStudent()">Show Result</button>
+
+    <table id="studentTable">
+
+        <tr>
+            <th>Name</th>
+            <th>Python</th>
+            <th>Data Science</th>
+            <th>Web</th>
+            <th>Result</th>
+        </tr>
+
+        <tr>
+            <td>Kim Minjun</td>
+            <td>85</td>
+            <td>90</td>
+            <td>80</td>
+            <td>Pass</td>
+        </tr>
+
+        <tr>
+            <td>Lee Jisoo</td>
+            <td>70</td>
+            <td>75</td>
+            <td>68</td>
+            <td>Pass</td>
+        </tr>
+
+        <tr>
+            <td>Park Seojun</td>
+            <td>35</td>
+            <td>40</td>
+            <td>30</td>
+            <td>Fail</td>
+        </tr>
+
+        <tr>
+            <td>Choi Yuna</td>
+            <td>92</td>
+            <td>88</td>
+            <td>95</td>
+            <td>Pass</td>
+        </tr>
+
+        <tr>
+            <td>Jung Hyunwoo</td>
+            <td>78</td>
+            <td>82</td>
+            <td>75</td>
+            <td>Pass</td>
+        </tr>
+
+        <tr>
+            <td>Kang Soyeon</td>
+            <td>45</td>
+            <td>38</td>
+            <td>50</td>
+            <td>Fail</td>
+        </tr>
+
+        <tr>
+            <td>Han Jiho</td>
+            <td>88</td>
+            <td>91</td>
+            <td>84</td>
+            <td>Pass</td>
+        </tr>
+
+        <tr>
+            <td>Yoon Chaewon</td>
+            <td>60</td>
+            <td>65</td>
+            <td>70</td>
+            <td>Pass</td>
+        </tr>
+
+        <tr>
+            <td>Shin Dohyun</td>
+            <td>30</td>
+            <td>25</td>
+            <td>35</td>
+            <td>Fail</td>
+        </tr>
+
+        <tr>
+            <td>Song Haeun</td>
+            <td>76</td>
+            <td>80</td>
+            <td>72</td>
+            <td>Pass</td>
+        </tr>
+
+    </table>
+
+    <div class="result" id="output">
+        Select a student to view performance.
+    </div>
+
+</div>
+
+
+<script>
+
+function showStudent() {
+
+    var name = document.getElementById("search").value.toLowerCase();
+
+    var students = {
+        "kim minjun": [85, 90, 80],
+        "lee jisoo": [70, 75, 68],
+        "park seojun": [35, 40, 30],
+        "choi yuna": [92, 88, 95],
+        "jung hyunwoo": [78, 82, 75],
+        "kang soyeon": [45, 38, 50],
+        "han jiho": [88, 91, 84],
+        "yoon chaewon": [60, 65, 70],
+        "shin dohyun": [30, 25, 35],
+        "song haeun": [76, 80, 72]
+    };
+
+    if (students[name]) {
+
+        var marks = students[name];
+
+        var total = marks[0] + marks[1] + marks[2];
+        var average = total / 3;
+        var percentage = (total / 300) * 100;
+
+        var grade;
+
+        if (percentage >= 80)
+            grade = "A";
+        else if (percentage >= 60)
+            grade = "B";
+        else if (percentage >= 50)
+            grade = "C";
+        else
+            grade = "F";
+
+        var status;
+
+        if (percentage >= 40)
+            status = "Pass";
+        else
+            status = "Fail";
+
+        document.getElementById("output").innerHTML =
+            "<b>Student:</b> " + name.toUpperCase() +
+            "<br><b>Total:</b> " + total + " / 300" +
+            "<br><b>Average:</b> " + average.toFixed(2) +
+            "<br><b>Percentage:</b> " + percentage.toFixed(2) + "%" +
+            "<br><b>Grade:</b> " + grade +
+            "<br><b>Result:</b> " + status;
+    }
+
+    else {
+
+        document.getElementById("output").innerHTML =
+            "Student not found.";
+    }
+}
+
+
+function searchStudent() {
+
+    var input = document.getElementById("search").value.toLowerCase();
+    var rows = document.getElementById("studentTable").rows;
+
+    for (var i = 1; i < rows.length; i++) {
+
+        var name = rows[i].cells[0].innerText.toLowerCase();
+
+        if (name.includes(input))
+            rows[i].style.display = "";
+        else
+            rows[i].style.display = "none";
+    }
+}
+
+
+function filterStudent() {
+
+    var filter = document.getElementById("filter").value;
+    var rows = document.getElementById("studentTable").rows;
+
+    for (var i = 1; i < rows.length; i++) {
+
+        var result = rows[i].cells[4].innerText;
+
+        if (filter == "All" || result == filter)
+            rows[i].style.display = "";
+        else
+            rows[i].style.display = "none";
+    }
+}
+
+</script>
+
+</body>
+</html>
